@@ -1,0 +1,26 @@
+@prefix: c-list;
+@primary-color: transparent;  // 默认样式必须写
+
+.@{prefix} {
+  &- {
+    &more {
+      color: @primary-color;
+      &:hover {
+        color: lighten(@primary-color, 15%);
+      }
+    }
+    &item {
+      .title {
+        &::before {
+          background-color: @primary-color;
+        }
+        &:hover {
+          color: lighten(@primary-color, 15%);
+        }
+      }
+      .desc {
+        color:  @primary-color;
+      }
+    }
+  }
+}

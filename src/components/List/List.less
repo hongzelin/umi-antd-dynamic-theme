@@ -1,0 +1,115 @@
+@import './List.theme.less';
+
+@prefix: c-list;
+
+.@{prefix} {
+  &- {
+    &root {
+      flex: 1 1;
+      padding: 0 24px;
+      border-right: 1px solid #d9d9d9;
+    }
+    &content {
+      height: 324px;
+    }
+    &headerWrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    &titleWrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      font-size: 16px;
+      color: #333;
+      .title {
+        margin-left: 8px;
+      }
+    }
+    &badge {
+      border-radius: 100px;
+      background: #ff6867;
+      font-size: 14px;
+      color: #fff;
+      margin-left: 12px;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+    }
+    &more {
+      font-size: 14px;
+      // color: @primary-color;
+      cursor: pointer;
+      // &:hover {
+      //  color: lighten(@primary-color, 15%);
+      // }
+    }
+
+    &item {
+      border-bottom: 1px solid #efefef;
+      padding: 12px 0;
+      text-align: left;
+      .titleTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .title {
+        color: #333;
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+        margin-bottom: 0;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+        padding-right: 8px;
+        &::before {
+          content: ' ';
+          height: 6px;
+          width: 6px;
+          // background-color: @primary-color;
+          display: inline-block;
+          border-radius: 100px;
+          margin-right: 8px;
+        }
+        &[data-status='1'] {
+          color: #333;
+        }
+        &[data-status='2'] {
+          color: #00cb7a;
+        }
+        &[data-status='3'] {
+          color: #ffcc32;
+        }
+        &[data-status='4'] {
+          color: #7a899c;
+        }
+        &:hover {
+          // color: lighten(@primary-color, 15%);
+        }
+      }
+      .date {
+        color: #afb8c4;
+        font-size: 14px;
+        font-family: PingFangSC-Regular;
+      }
+      .desc {
+        color: @primary-color;
+        font-size: 12px;
+        font-family: PingFangSC-Regular;
+        margin: 6px 14px 0;
+      }
+    }
+
+    &page {
+      text-align: right;
+      margin: 16px 0 0;
+    }
+  }
+}

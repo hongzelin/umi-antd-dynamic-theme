@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": ["es2017", "DOM"],
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "types" : ["node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./src/.umi/*"]
+    },
+    "outDir": "./lib"
+  },
+  "include": [
+    "src/**/*",
+    "typings.d.ts",
+  ],
+  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
+}
