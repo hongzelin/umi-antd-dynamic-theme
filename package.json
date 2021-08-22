@@ -1,8 +1,10 @@
 {
   "private": true,
+  "version": "2.0.0",
   "scripts": {
-    "start": "umi dev",
-    "build": "umi build",
+    "start": "npm run theme && umi dev",
+    "build": "npm run theme && umi build",
+    "theme": "node scripts/theme/themeScripts.js",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -22,6 +24,8 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@umijs/preset-react": "^1.8.8",
+    "chalk": "^4.1.2",
+    "glob": "^7.1.7",
     "prefix-classnames": "^0.0.4",
     "umi": "^3.4.23"
   },

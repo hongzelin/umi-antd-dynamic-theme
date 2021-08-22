@@ -1,0 +1,29 @@
+@primary-color: #0fb748;
+@color-secondary: #6c757d;
+
+// src/components/List/List.theme.less
+.c-list-more {
+  color: @primary-color;
+}
+.c-list-more:hover {
+  color: @primary-color;
+}
+.c-list-item .title::before {
+  background-color: @primary-color;
+}
+.c-list-item .title:hover {
+  color: lighten(@primary-color, 15%);
+}
+.c-list-item .desc {
+  color: @primary-color;
+}
+
+// src/components/Title/Title.theme.less
+.c-title-titleWrap .title.active:hover {
+  color: @primary-color;
+}
+
+// src/pages/footerList/FooterList.theme.less
+.root {
+  color: @primary-color;
+}

@@ -1,29 +1,12 @@
-// 获取当前日期 yyyy/mm/dd
-export function getCurrentDate() {
-  const nowDate = new Date();
-  const year = nowDate.getFullYear();
-  const month = nowDate.getMonth() + 1 < 10 ? `0${nowDate.getMonth() + 1}` : nowDate.getMonth() + 1;
-  const day = nowDate.getDate() < 10 ? `0${nowDate.getDate()}` : nowDate.getDate();
-  const dateStr = `${year}/${month}/${day}`;
-  return dateStr;
-}
-
-// 获取当前星期几
-export function getCurrentDay() {
-  return `星期${'日一二三四五六'.charAt(new Date().getDay())}`;
-}
-
 function _changeTheme(themeColor: string) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (!(window as any).less) return;
-  window.setTimeout(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (window as any).less.modifyVars({
-      '@header-bar-bg': themeColor,
-      '@primary-color': themeColor,
-      // '@primary-color': themeColor,
-    });
-  }, 300);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (window as any).less.modifyVars({
+    '@primary-color': themeColor,
+    '@header-bar-visible': 'visible',
+  });
 }
 
 let lessNodesAppended: boolean = false;
@@ -41,14 +24,16 @@ export function onChangeTheme(themeColor: string) {
     lessStyleNode.setAttribute('rel', 'stylesheet/less');
     lessStyleNode.setAttribute('href', '/styles/components.less'); // public 目标下
 
+    // https://lesscss.org/usage/#api
+    // env: 'production' development
     lessConfigNode.innerHTML = `
         window.less = {
+          env: 'production',
           async: true,
-          env: 'development',
           javascriptEnabled: true
         };
-      `;
-    lessScriptNode.src = '/less.min.js';
+        `;
+    lessScriptNode.src = '/less.4x.min.js';
     lessScriptNode.async = true;
     lessScriptNode.onload = () => {
       _changeTheme(themeColor);

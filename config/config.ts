@@ -1,6 +1,5 @@
 import { defineConfig } from 'umi';
 import theme from './theme';
-import themePath from './path.config';
 
 export default defineConfig({
   locale: {
@@ -9,13 +8,11 @@ export default defineConfig({
   },
   ignoreMomentLocale: true,
   theme,
-  proxy: {
-  },
+  proxy: {},
   title: '动态主题',
   targets: {
     ie: 11,
   },
-  copy: themePath,
   chainWebpack(memo) {
     // 修改less-loader的css-modules的配置，添加文件名作为前缀
     memo.module

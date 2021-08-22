@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // 主色调
   '@primary-color': '#0fb748',
 
